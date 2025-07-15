@@ -32,32 +32,32 @@ public partial class MainWindowViewModel : ViewModelBase
 
   public PageViewModelBase CurrentPage
   {
-    get { return _CurrentPage; }
-    private set { this.RaiseAndSetIfChanged(ref _CurrentPage, value); }
+    get => _CurrentPage;
+    set => this.RaiseAndSetIfChanged(ref _CurrentPage, value);
   }
 
   public string CurrentPageName
   {
-    get { return _CurrentPageName; }
-    private set { this.RaiseAndSetIfChanged(ref _CurrentPageName, value); }
+    get => _CurrentPageName;
+    set => this.RaiseAndSetIfChanged(ref _CurrentPageName, value);
   }
 
   public bool AtAuthenticatorPage
   {
-    get { return _AtAuthenticatorPage; }
-    private set { this.RaiseAndSetIfChanged(ref _AtAuthenticatorPage, value); }
+    get => _AtAuthenticatorPage;
+    set => this.RaiseAndSetIfChanged(ref _AtAuthenticatorPage, value);
   }
 
   public bool AtPasswordsPage
   {
-    get { return _AtPasswordsPage; }
-    private set { this.RaiseAndSetIfChanged(ref _AtPasswordsPage, value); }
+    get => _AtPasswordsPage;
+    set => this.RaiseAndSetIfChanged(ref _AtPasswordsPage, value);
   }
 
   public bool AtSettingsPage
   {
-    get { return _AtSettingsPage; }
-    private set { this.RaiseAndSetIfChanged(ref _AtSettingsPage, value); }
+    get => _AtSettingsPage;
+    set => this.RaiseAndSetIfChanged(ref _AtSettingsPage, value);
   }
 
   private void UpdateAtPageState()

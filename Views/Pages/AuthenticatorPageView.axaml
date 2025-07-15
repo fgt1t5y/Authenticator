@@ -6,11 +6,20 @@
     xmlns:vm="using:Authenticator.ViewModels"
     d:DesignHeight="450"
     d:DesignWidth="800"
-    x:DataType="vm:MainWindowViewModel"
+    x:DataType="vm:AuthenticatorPageViewModel"
     mc:Ignorable="d">
 
-  <TextBlock HorizontalAlignment="Center"
-      VerticalAlignment="Center"
-      FontWeight="Bold"
-      Text="Authenticator Page" />
+  <Design.DataContext>
+    <vm:AuthenticatorPageViewModel />
+  </Design.DataContext>
+
+  <Grid Margin="6" RowDefinitions="Auto, Auto">
+    <StackPanel Grid.Row="0"
+        HorizontalAlignment="Right"
+        Orientation="Horizontal">
+      <Button Command="{Binding AddAccountCommand}">
+        <PathIcon Data="{StaticResource store_microsoft_regular}" />
+      </Button>
+    </StackPanel>
+  </Grid>
 </UserControl>
