@@ -17,12 +17,12 @@ public partial class MainWindow : Window
         }
 
         WeakReferenceMessenger.Default.Register<MainWindow, AddAccountMessage>(this, static (w, m) =>
-          {
-              var dialog = new AddAccountWindow
-              {
-                  DataContext = new AddAccountWindowViewModel()
-              };
-              m.Reply(dialog.ShowDialog<AddAccountWindowViewModel?>(w));
-          });
+        {
+            var dialog = new AddAccountWindow
+            {
+                DataContext = new AddAccountWindowViewModel()
+            };
+            m.Reply(dialog.ShowDialog<AddAccountWindowViewModel?>(w));
+        });
     }
 }

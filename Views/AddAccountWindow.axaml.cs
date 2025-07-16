@@ -11,7 +11,7 @@ public partial class AddAccountWindow : Window
         InitializeComponent();
 
         WeakReferenceMessenger.Default.Register<AddAccountWindow, AddAccountCancledMessage>(
-          this,
-          static (w, m) => w.Close());
+        this,
+        static (w, m) => w.Close());
     }
 }
