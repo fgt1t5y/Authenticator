@@ -38,8 +38,12 @@
 
         <FluentTheme>
             <FluentTheme.Palettes>
-                <ColorPaletteResources x:Key="Light" RegionColor="White" />
-                <ColorPaletteResources x:Key="Dark" RegionColor="Black" />
+                <ColorPaletteResources x:Key="Light"
+                    Accent="#007bff"
+                    RegionColor="White" />
+                <ColorPaletteResources x:Key="Dark"
+                    Accent="#007bff"
+                    RegionColor="Black" />
             </FluentTheme.Palettes>
         </FluentTheme>
     </Application.Styles>

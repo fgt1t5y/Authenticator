@@ -10,7 +10,7 @@ public partial class AuthenticatorPageViewModel : PageViewModelBase
   public override string PageName { get; protected set; } = "Authenticator";
 
   [RelayCommand]
-  private async Task AddAccountAsync()
+  public async Task AddAccountAsync()
   {
     await WeakReferenceMessenger.Default.Send(new AddAccountMessage());
   }

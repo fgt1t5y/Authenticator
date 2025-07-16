@@ -7,10 +7,11 @@
     xmlns:vm="using:Authenticator.ViewModels"
     Title="Add Account"
     Width="400"
-    Height="250"
+    Height="520"
     d:DesignHeight="250"
     d:DesignWidth="400"
     x:DataType="vm:AddAccountWindowViewModel"
+    CanResize="False"
     Icon="/Assets/avalonia-logo.ico"
     WindowStartupLocation="CenterOwner"
     mc:Ignorable="d">
@@ -26,11 +27,47 @@
     <TextBlock Text="Secret" />
     <TextBox Text="{Binding Secret}" Watermark="Enter your secret" />
 
-    <CheckBox Content="Show Advanced Options" />
+    <CheckBox Content="Show Advanced Options" IsChecked="{Binding ShowAdvancedOptions}" />
+
+    <StackPanel IsVisible="{Binding ShowAdvancedOptions}" Spacing="6">
+      <TextBlock Text="Username" />
+      <TextBox Text="{Binding Username}" Watermark="Enter your username" />
+
+      <TextBlock Text="Period (second)" />
+      <NumericUpDown FormatString="0"
+          Increment="1"
+          Maximum="120"
+          Minimum="1"
+          Text="{Binding Period}"
+          Watermark="Enter refresh period" />
+
+      <TextBlock Text="Digits" />
+      <ComboBox SelectedIndex="0">
+        <ComboBoxItem>6</ComboBoxItem>
+        <ComboBoxItem>8</ComboBoxItem>
+      </ComboBox>
+
+      <TextBlock Text="Algorithm" />
+      <ComboBox SelectedIndex="{Binding SelectedAlgorithm}">
+        <ComboBoxItem>SHA-1</ComboBoxItem>
+        <ComboBoxItem>SHA-256</ComboBoxItem>
+        <ComboBoxItem>SHA-512</ComboBoxItem>
+        <ComboBoxItem>GOST 34.11 256</ComboBoxItem>
+        <ComboBoxItem>GOST 34.11 512</ComboBoxItem>
+      </ComboBox>
+
+      <TextBlock Text="Type" />
+      <ComboBox SelectedIndex="0">
+        <ComboBoxItem>Time Based</ComboBoxItem>
+        <ComboBoxItem>Counter Based</ComboBoxItem>
+      </ComboBox>
+    </StackPanel>
 
     <StackPanel HorizontalAlignment="Right"
         Orientation="Horizontal"
         Spacing="6">
+      <Button Command="{Binding CancleAddAccount}" Content="Cancle" />
+
       <Button Content="Confirm" />
     </StackPanel>
   </StackPanel>
