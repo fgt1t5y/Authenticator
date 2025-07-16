@@ -1,6 +1,6 @@
 using Authenticator.Messages;
 using Authenticator.ViewModels;
-using Authenticator.Models;
+using Authenticator.Database;
 using Avalonia.Controls;
 using CommunityToolkit.Mvvm.Messaging;
 
@@ -11,6 +11,8 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+
+        SQLiteConnection.InitialDatabase();
 
         if (Design.IsDesignMode)
         {

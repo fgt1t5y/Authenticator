@@ -8,7 +8,7 @@ namespace Authenticator.Controls;
 public class NavigateButton : Button
 {
     public static readonly StyledProperty<bool> IsActiveProperty =
-      AvaloniaProperty.Register<NavigateButton, bool>(nameof(IsActive));
+        AvaloniaProperty.Register<NavigateButton, bool>(nameof(IsActive));
 
     public bool IsActive
     {

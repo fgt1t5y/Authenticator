@@ -15,15 +15,21 @@
   </Design.DataContext>
 
   <Grid Margin="6" RowDefinitions="Auto, Auto">
-    <StackPanel Grid.Row="0"
-        HorizontalAlignment="Right"
-        Orientation="Horizontal">
-      <Button Command="{Binding AddAccountCommand}">
-        <PathIcon Width="14"
-            Height="14"
-            Data="{StaticResource add}" />
-      </Button>
-    </StackPanel>
+    <Border Grid.Row="0"
+        Padding="6"
+        Background="White"
+        CornerRadius="4" Margin="0,0,0,6">
+      <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+        <controls:TextButton Command="{Binding AddAccountCommand}">
+          <StackPanel VerticalAlignment="Center"
+              Orientation="Horizontal"
+              Spacing="4">
+            <PathIcon Data="{StaticResource add}" />
+            <TextBlock Text="Add Account" />
+          </StackPanel>
+        </controls:TextButton>
+      </StackPanel>
+    </Border>
 
     <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
       <ItemsControl ItemsSource="{Binding Accounts}">

@@ -19,22 +19,24 @@
         <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <Grid RowDefinitions="Auto, Auto">
-        <Border Grid.Row="0">
-            <StackPanel Margin="6,0"
-                Orientation="Horizontal"
-                Spacing="6">
-                <controls:NavigateButton Command="{Binding NavigateToAuthenticatorPage}"
-                    Content="Authenticator"
-                    IsActive="{Binding AtAuthenticatorPage}" />
-                <controls:NavigateButton Command="{Binding NavigateToPasswordsPage}"
-                    Content="Passwords"
-                    IsActive="{Binding AtPasswordsPage}" />
-                <controls:NavigateButton Command="{Binding NavigateToSettingsPage}"
-                    Content="Settings"
-                    IsActive="{Binding AtSettingsPage}" />
-            </StackPanel>
-        </Border>
-        <ContentControl Grid.Row="1" Content="{Binding CurrentPage}" />
+    <Grid RowDefinitions="8*, 92*">
+        <StackPanel Grid.Row="0"
+            Margin="6,0"
+            Orientation="Horizontal"
+            Spacing="6">
+            <controls:NavigateButton Command="{Binding NavigateToAuthenticatorPage}"
+                Content="Authenticator"
+                IsActive="{Binding AtAuthenticatorPage}" />
+            <controls:NavigateButton Command="{Binding NavigateToPasswordsPage}"
+                Content="Passwords"
+                IsActive="{Binding AtPasswordsPage}" />
+            <controls:NavigateButton Command="{Binding NavigateToSettingsPage}"
+                Content="Settings"
+                IsActive="{Binding AtSettingsPage}" />
+        </StackPanel>
+
+        <ContentControl Grid.Row="1"
+            Background="#E5E7EB"
+            Content="{Binding CurrentPage}" />
     </Grid>
 </Window>
