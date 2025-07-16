@@ -12,6 +12,13 @@ public partial class AuthenticatorPageViewModel : PageViewModelBase
     [RelayCommand]
     public async Task AddAccountAsync()
     {
-        await WeakReferenceMessenger.Default.Send(new AddAccountMessage());
+        var account = await WeakReferenceMessenger.Default.Send(new AddAccountMessage());
+
+        if (account is not null)
+        {
+            System.Diagnostics.Debug.WriteLine(
+                $"{account.Issuer}, {account.Secret}, {account.Username}, {account.Period}, {account.Digits}, {account.Algorithm}, {account.Type}"
+            );
+        }
     }
 }

@@ -1,5 +1,6 @@
 using Authenticator.Messages;
 using Authenticator.ViewModels;
+using Authenticator.Models;
 using Avalonia.Controls;
 using CommunityToolkit.Mvvm.Messaging;
 
@@ -22,7 +23,8 @@ public partial class MainWindow : Window
             {
                 DataContext = new AddAccountWindowViewModel()
             };
-            m.Reply(dialog.ShowDialog<AddAccountWindowViewModel?>(w));
+
+            m.Reply(dialog.ShowDialog<AuthenticatorAccountViewModel?>(w));
         });
     }
 }

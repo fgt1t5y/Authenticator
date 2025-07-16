@@ -7,8 +7,8 @@
     xmlns:vm="using:Authenticator.ViewModels"
     Title="Add Account"
     Width="400"
-    Height="520"
-    d:DesignHeight="520"
+    Height="540"
+    d:DesignHeight="540"
     d:DesignWidth="400"
     x:DataType="vm:AddAccountWindowViewModel"
     CanResize="False"
@@ -33,22 +33,21 @@
       <TextBlock Text="Username" />
       <TextBox Text="{Binding Username}" Watermark="Enter your username" />
 
-      <TextBlock Text="Period (second)" />
+      <TextBlock Text="Period (second, set 0 will never refresh)" />
       <NumericUpDown FormatString="0"
           Increment="1"
           Maximum="120"
-          Minimum="1"
-          Text="{Binding Period}"
-          Watermark="Enter refresh period" />
+          Minimum="0"
+          Text="{Binding Period}" />
 
       <TextBlock Text="Digits" />
-      <ComboBox SelectedIndex="0">
+      <ComboBox SelectedIndex="{Binding Digit}">
         <ComboBoxItem>6</ComboBoxItem>
         <ComboBoxItem>8</ComboBoxItem>
       </ComboBox>
 
       <TextBlock Text="Algorithm" />
-      <ComboBox SelectedIndex="{Binding SelectedAlgorithm}">
+      <ComboBox SelectedIndex="{Binding Algorithm}">
         <ComboBoxItem>SHA-1</ComboBoxItem>
         <ComboBoxItem>SHA-256</ComboBoxItem>
         <ComboBoxItem>SHA-512</ComboBoxItem>
@@ -57,18 +56,21 @@
       </ComboBox>
 
       <TextBlock Text="Type" />
-      <ComboBox SelectedIndex="0">
+      <ComboBox SelectedIndex="{Binding Type}">
         <ComboBoxItem>Time Based</ComboBoxItem>
         <ComboBoxItem>Counter Based</ComboBoxItem>
       </ComboBox>
     </StackPanel>
 
     <StackPanel HorizontalAlignment="Right"
+        VerticalAlignment="Stretch"
         Orientation="Horizontal"
         Spacing="6">
-      <Button Command="{Binding CancleAddAccount}" Content="Cancle" />
-
-      <Button Content="Confirm" />
+      <Button Command="{Binding ConfirmAddAccount}" Content="Confirm" />
     </StackPanel>
+
+    <TextBlock VerticalAlignment="Center"
+        Foreground="Red"
+        Text="{Binding ErrorMessage}" />
   </StackPanel>
 </Window>
