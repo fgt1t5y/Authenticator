@@ -7,11 +7,11 @@ namespace Authenticator.ViewModels;
 
 public partial class AuthenticatorPageViewModel : PageViewModelBase
 {
-  public override string PageName { get; protected set; } = "Authenticator";
+    public override string PageName { get; protected set; } = "Authenticator";
 
-  [RelayCommand]
-  public async Task AddAccountAsync()
-  {
-    await WeakReferenceMessenger.Default.Send(new AddAccountMessage());
-  }
+    [RelayCommand]
+    public async Task AddAccountAsync()
+    {
+        await WeakReferenceMessenger.Default.Send(new AddAccountMessage());
+    }
 }

@@ -7,22 +7,22 @@ namespace Authenticator.Views;
 
 public partial class MainWindow : Window
 {
-  public MainWindow()
-  {
-    InitializeComponent();
-
-    if (Design.IsDesignMode)
+    public MainWindow()
     {
-      return;
-    }
+        InitializeComponent();
 
-    WeakReferenceMessenger.Default.Register<MainWindow, AddAccountMessage>(this, static (w, m) =>
-      {
-        var dialog = new AddAccountWindow
+        if (Design.IsDesignMode)
         {
-          DataContext = new AddAccountWindowViewModel()
-        };
-        m.Reply(dialog.ShowDialog<AddAccountWindowViewModel?>(w));
-      });
-  }
+            return;
+        }
+
+        WeakReferenceMessenger.Default.Register<MainWindow, AddAccountMessage>(this, static (w, m) =>
+          {
+              var dialog = new AddAccountWindow
+              {
+                  DataContext = new AddAccountWindowViewModel()
+              };
+              m.Reply(dialog.ShowDialog<AddAccountWindowViewModel?>(w));
+          });
+    }
 }

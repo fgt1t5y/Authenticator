@@ -1,0 +1,11 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  "[csharp]": {
+    "editor.tabSize": 4
+  },
+  "[AXAML]": {
+    "editor.tabSize": 2
+  }
+}

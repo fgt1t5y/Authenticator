@@ -7,19 +7,19 @@ namespace Authenticator.Controls;
 [PseudoClasses(":active")]
 public class NavigateButton : Button
 {
-  public static readonly StyledProperty<bool> IsActiveProperty =
-    AvaloniaProperty.Register<NavigateButton, bool>(nameof(IsActive));
+    public static readonly StyledProperty<bool> IsActiveProperty =
+      AvaloniaProperty.Register<NavigateButton, bool>(nameof(IsActive));
 
-  public bool IsActive
-  {
-    get => GetValue(IsActiveProperty);
-    set => SetValue(IsActiveProperty, value);
-  }
+    public bool IsActive
+    {
+        get => GetValue(IsActiveProperty);
+        set => SetValue(IsActiveProperty, value);
+    }
 
-  protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
-  {
-    base.OnPropertyChanged(change);
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+    {
+        base.OnPropertyChanged(change);
 
-    PseudoClasses.Set(":active", IsActive);
-  }
+        PseudoClasses.Set(":active", IsActive);
+    }
 }

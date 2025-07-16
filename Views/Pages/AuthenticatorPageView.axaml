@@ -18,7 +18,9 @@
         HorizontalAlignment="Right"
         Orientation="Horizontal">
       <Button Command="{Binding AddAccountCommand}">
-        <PathIcon Data="{StaticResource store_microsoft_regular}" />
+        <PathIcon Width="14"
+            Height="14"
+            Data="{StaticResource add}" />
       </Button>
     </StackPanel>
   </Grid>
