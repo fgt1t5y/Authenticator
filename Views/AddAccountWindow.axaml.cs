@@ -14,5 +14,7 @@ public partial class AddAccountWindow : Window
             this,
             static (w, m) => w.Close(m.NewAccount)
         );
+
+        IssueInput.AttachedToVisualTree += (s, e) => IssueInput.Focus();
     }
 }

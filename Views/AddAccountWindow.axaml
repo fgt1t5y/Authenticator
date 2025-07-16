@@ -22,7 +22,9 @@
 
   <StackPanel Margin="6" Spacing="6">
     <TextBlock Text="Issuer" />
-    <TextBox Text="{Binding Issuer}" Watermark="Enter your secret issuer" />
+    <TextBox Name="IssueInput"
+        Text="{Binding Issuer}"
+        Watermark="Enter your secret issuer" />
 
     <TextBlock Text="Secret" />
     <TextBox Text="{Binding Secret}" Watermark="Enter your secret" />

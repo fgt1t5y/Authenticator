@@ -128,6 +128,11 @@ public partial class AddAccountWindowViewModel : ViewModelBase
 			return;
 		}
 
+		if (string.IsNullOrWhiteSpace(Username))
+		{
+			Username = "Anonymous";
+		}
+
 		int finalPeriod = int.TryParse(Period, out var intPeriod) ? intPeriod : 30;
 		OTPTypes finalType = Type;
 
