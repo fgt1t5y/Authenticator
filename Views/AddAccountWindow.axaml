@@ -35,7 +35,7 @@
       <TextBlock Text="Username" />
       <TextBox Text="{Binding Username}" Watermark="Enter your username" />
 
-      <TextBlock Text="Period (second, set 0 will never refresh)" />
+      <TextBlock Text="Period (second)" />
       <NumericUpDown FormatString="0"
           Increment="1"
           Maximum="120"
@@ -68,7 +68,7 @@
         VerticalAlignment="Stretch"
         Orientation="Horizontal"
         Spacing="6">
-      <Button Command="{Binding ConfirmAddAccount}" Content="Confirm" />
+      <controls:PrimaryButton Command="{Binding ConfirmAddAccount}" Content="Confirm" />
     </StackPanel>
 
     <TextBlock VerticalAlignment="Center"

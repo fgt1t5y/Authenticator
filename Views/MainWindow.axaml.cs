@@ -12,7 +12,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-        SQLiteConnection.InitialDatabase();
+        SQLiteConnection.InitializeDatabase();
 
         if (Design.IsDesignMode)
         {

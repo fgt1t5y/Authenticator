@@ -32,6 +32,12 @@ public enum OTPTypes
 
 public partial class AddAccountWindowViewModel : ViewModelBase
 {
+	[GeneratedRegex(@"^[a-z2-7]+=*$", RegexOptions.IgnoreCase)]
+	private static partial Regex Base32Regex();
+
+	[GeneratedRegex(@"^[0-9a-f]+$", RegexOptions.IgnoreCase)]
+	private static partial Regex HexRegex();
+
 	private string _Issuer = string.Empty;
 
 	private string _Secret = string.Empty;
@@ -162,10 +168,4 @@ public partial class AddAccountWindowViewModel : ViewModelBase
 			)
 		));
 	}
-
-	[GeneratedRegex(@"^[a-z2-7]+=*$", RegexOptions.IgnoreCase)]
-	private static partial Regex Base32Regex();
-
-	[GeneratedRegex(@"^[0-9a-f]+$", RegexOptions.IgnoreCase)]
-	private static partial Regex HexRegex();
 }

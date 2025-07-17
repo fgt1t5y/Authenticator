@@ -16,9 +16,8 @@
 
   <Grid Margin="6" RowDefinitions="Auto, Auto">
     <Border Grid.Row="0"
-        Padding="6"
-        Background="White"
-        CornerRadius="4" Margin="0,0,0,6">
+        Margin="0,0,0,6"
+        Padding="6">
       <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
         <controls:TextButton Command="{Binding AddAccountCommand}">
           <StackPanel VerticalAlignment="Center"
