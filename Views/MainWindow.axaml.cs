@@ -14,6 +14,8 @@ public partial class MainWindow : Window
 
         SQLiteConnection.InitializeDatabase();
 
+        // SQLiteConnection.InitializeTables();
+
         if (Design.IsDesignMode)
         {
             return;
@@ -28,5 +30,10 @@ public partial class MainWindow : Window
 
             m.Reply(dialog.ShowDialog<AuthenticatorAccountViewModel?>(w));
         });
+    }
+
+    private void MainWindow_Closing()
+    {
+        SQLiteConnection.DestroyConnection();
     }
 }

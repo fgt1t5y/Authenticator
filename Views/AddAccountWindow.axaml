@@ -7,8 +7,8 @@
     xmlns:vm="using:Authenticator.ViewModels"
     Title="Add Account"
     Width="400"
-    Height="540"
-    d:DesignHeight="540"
+    Height="500"
+    d:DesignHeight="500"
     d:DesignWidth="400"
     x:DataType="vm:AddAccountWindowViewModel"
     CanResize="False"
@@ -29,40 +29,36 @@
     <TextBlock Text="Secret" />
     <TextBox Text="{Binding Secret}" Watermark="Enter your secret" />
 
-    <CheckBox Content="Show Advanced Options" IsChecked="{Binding ShowAdvancedOptions}" />
+    <TextBlock Text="Username" />
+    <TextBox Text="{Binding Username}" Watermark="Enter your username" />
 
-    <StackPanel IsVisible="{Binding ShowAdvancedOptions}" Spacing="6">
-      <TextBlock Text="Username" />
-      <TextBox Text="{Binding Username}" Watermark="Enter your username" />
+    <TextBlock Text="Period (second)" />
+    <NumericUpDown FormatString="0"
+        Increment="1"
+        Maximum="120"
+        Minimum="0"
+        Text="{Binding Period}" />
 
-      <TextBlock Text="Period (second)" />
-      <NumericUpDown FormatString="0"
-          Increment="1"
-          Maximum="120"
-          Minimum="0"
-          Text="{Binding Period}" />
+    <TextBlock Text="Digits" />
+    <ComboBox SelectedIndex="{Binding Digit}">
+      <ComboBoxItem>6</ComboBoxItem>
+      <ComboBoxItem>8</ComboBoxItem>
+    </ComboBox>
 
-      <TextBlock Text="Digits" />
-      <ComboBox SelectedIndex="{Binding Digit}">
-        <ComboBoxItem>6</ComboBoxItem>
-        <ComboBoxItem>8</ComboBoxItem>
-      </ComboBox>
+    <TextBlock Text="Algorithm" />
+    <ComboBox SelectedIndex="{Binding Algorithm}">
+      <ComboBoxItem>SHA-1</ComboBoxItem>
+      <ComboBoxItem>SHA-256</ComboBoxItem>
+      <ComboBoxItem>SHA-512</ComboBoxItem>
+      <ComboBoxItem>GOST 34.11 256</ComboBoxItem>
+      <ComboBoxItem>GOST 34.11 512</ComboBoxItem>
+    </ComboBox>
 
-      <TextBlock Text="Algorithm" />
-      <ComboBox SelectedIndex="{Binding Algorithm}">
-        <ComboBoxItem>SHA-1</ComboBoxItem>
-        <ComboBoxItem>SHA-256</ComboBoxItem>
-        <ComboBoxItem>SHA-512</ComboBoxItem>
-        <ComboBoxItem>GOST 34.11 256</ComboBoxItem>
-        <ComboBoxItem>GOST 34.11 512</ComboBoxItem>
-      </ComboBox>
-
-      <TextBlock Text="Type" />
-      <ComboBox SelectedIndex="{Binding Type}">
-        <ComboBoxItem>Time Based</ComboBoxItem>
-        <ComboBoxItem>Counter Based</ComboBoxItem>
-      </ComboBox>
-    </StackPanel>
+    <TextBlock Text="Type" />
+    <ComboBox SelectedIndex="{Binding Type}">
+      <ComboBoxItem>Time Based</ComboBoxItem>
+      <ComboBoxItem>Counter Based</ComboBoxItem>
+    </ComboBox>
 
     <StackPanel HorizontalAlignment="Right"
         VerticalAlignment="Stretch"

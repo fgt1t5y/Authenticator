@@ -42,8 +42,6 @@ public partial class AddAccountWindowViewModel : ViewModelBase
 
 	private string _Secret = string.Empty;
 
-	private bool _ShowAdvancedOptions = false;
-
 	private string _Username = string.Empty;
 
 	private string _Period = "30";
@@ -66,12 +64,6 @@ public partial class AddAccountWindowViewModel : ViewModelBase
 	{
 		get => _Secret;
 		set => this.RaiseAndSetIfChanged(ref _Secret, value);
-	}
-
-	public bool ShowAdvancedOptions
-	{
-		get => _ShowAdvancedOptions;
-		set => this.RaiseAndSetIfChanged(ref _ShowAdvancedOptions, value);
 	}
 
 	public string Username

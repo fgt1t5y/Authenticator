@@ -1,3 +1,4 @@
+using Authenticator.Database;
 using Authenticator.Messages;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ public partial class AuthenticatorPageViewModel : PageViewModelBase
         if (account is not null)
         {
             Accounts.Add(account);
+
+            await SQLiteConnection.InsertAuthenticatorAccount(account._account);
 
             System.Diagnostics.Debug.WriteLine(
                 $"{account.Issuer}, {account.Secret}, {account.Username}, {account.Period}, {account.Digits}, {account.Algorithm}, {account.Type}"

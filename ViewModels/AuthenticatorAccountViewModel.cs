@@ -4,7 +4,7 @@ namespace Authenticator.ViewModels;
 
 public partial class AuthenticatorAccountViewModel : ViewModelBase
 {
-    private readonly AuthenticatorAccount _account;
+    public readonly AuthenticatorAccount _account;
 
     public AuthenticatorAccountViewModel(AuthenticatorAccount account)
     {
