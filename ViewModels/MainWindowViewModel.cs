@@ -15,10 +15,10 @@ public partial class MainWindowViewModel : ViewModelBase
 
     private readonly PageViewModelBase[] Pages =
     [
-      new AuthenticatorPageViewModel(),
-    new PasswordsPageViewModel(),
-    new SettingsPageViewModel(),
-  ];
+        new AuthenticatorPageViewModel(),
+        new PasswordsPageViewModel(),
+        new SettingsPageViewModel(),
+    ];
 
     private PageViewModelBase _CurrentPage;
 
